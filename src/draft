@@ -1,0 +1,13 @@
+const OnEntry = entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      console.log('yes');
+      picsApiService.resetPage();
+      clearGalleryContainer();
+      picsApiService.fetchPictures().then(hits => {
+        appendPicturesMarkup(hits);
+        picsApiService.incrementPage();
+      });
+    }
+  });
+};

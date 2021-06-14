@@ -1,1 +1,1 @@
-# goit-js-hw-13-image-finder
+Goit-js-hw-13-image-finder

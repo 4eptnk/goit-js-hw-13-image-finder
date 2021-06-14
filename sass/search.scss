@@ -1,0 +1,116 @@
+.search-form {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+// Кнопка
+.search-button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: cyan;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.search-button:before {
+  content: '';
+  background: linear-gradient(
+    45deg,
+    #00ffea,
+    #16deec,
+    #4ff7a3,
+    #28f183,
+    #00ffd5,
+    #40c9f3,
+    #26f3c0,
+    #5cf3f3,
+    #7de1f3
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.search-button:active {
+  color: #000;
+}
+
+.search-button:active:after {
+  background: transparent;
+}
+
+.search-button:hover:before {
+  opacity: 1;
+}
+
+.search-button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+// Инпут
+
+.container {
+  width: 30%;
+  margin-right: 40px;
+  text-align: center;
+  overflow: hidden;
+}
+input {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+  color: cyan;
+  background: black;
+  text-overflow: ellipsis;
+}
+input::placeholder {
+  font-size: 14px;
+  letter-spacing: 3px;
+  color: cyan;
+  opacity: 0.22;
+}
+.underline {
+  transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  margin: 0 auto;
+  display: block;
+  height: 1px;
+  background: cyan;
+  width: 100%;
+}
